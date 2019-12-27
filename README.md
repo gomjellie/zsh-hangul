@@ -1,5 +1,8 @@
 # zsh-hangul
+
 No need to get stress from 한/영 key
+
+![zsh-hangul.gif](./.github/zsh-hangul.gif)
 
 # Installation
 
