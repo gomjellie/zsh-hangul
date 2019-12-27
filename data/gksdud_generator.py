@@ -134,6 +134,5 @@ def make_combinations():
                 res = combine([_initial, _medial, _final])
                 print('gksdud[{}]="{}"'.format(res, "".join(gksdud(split_gks(res)))))
 
-print("typeset -A gksdud")
 
 make_combinations()
