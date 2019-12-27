@@ -68,10 +68,7 @@ kor2eng = {
 }
 
 def combine(chars):
-    """
-    ["ㅎ", "ㅏ", "ㄴ"] => "한"
-    ["ㄱ", "ㅡ", "ㄹ"] => "글"
-    """
+    # chars -> [initial, medial, final]
     if len(chars) == 1:
         return chars[0]
 
