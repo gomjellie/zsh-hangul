@@ -91,29 +91,20 @@ def gksdud(chars):
     
     return ret
 
-def isKor(char):
-	ord_ = ord(char)
-	if 44031 < ord_ < 55204:
-		return True
-	if 12592 < ord_ < 12644:
-		return True
-	return False
-
 def split_gks(gks):
     """
     가 -> ['ㄱ', 'ㅏ']
     김 -> ['ㄱ', 'ㅣ', 'ㅁ']
     한 -> ['ㅎ', 'ㅏ', 'ㄴ']
     """
-    ## 영어인 경우 구분해서 작성함. 
-    if '가' <= gks <= '힣':
-        ## 588개 마다 초성이 바뀜. 
-        ch1 = (ord(gks) - ord('가')) // 588
-        ## 중성은 총 28가지 종류
-        ch2 = ((ord(gks) - ord('가')) - (588 * ch1)) // 28
-        ch3 = (ord(gks) - ord('가')) - (588 * ch1) - 28 * ch2
-        return [initial[ch1], medial[ch2], final[ch3]]
-    return gks
+    if '가' > gks or gks > '힣':
+        raise Exception("split_gks() got wrong parameter {}".format(gks))
+    ## 588개 마다 초성이 바뀜. 
+    ch1 = (ord(gks) - ord('가')) // 588
+    ## 중성은 총 28가지 종류
+    ch2 = ((ord(gks) - ord('가')) - (588 * ch1)) // 28
+    ch3 = (ord(gks) - ord('가')) - (588 * ch1) - 28 * ch2
+    return [initial[ch1], medial[ch2], final[ch3]]
 
 def make_combinations():
     for _zi in zi:
