@@ -21,3 +21,8 @@ plugins=(
 ```
 
 과 같이 zsh-hangul을 추가해주세요.
+
+# Reference
+
+http://zsh.sourceforge.net/Doc/zsh_us.pdf
+
