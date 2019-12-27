@@ -6,11 +6,9 @@ https://github.com/baehyunsol/korean_saying_generator
 
 """
 
-initial = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ']
-medial = ['ㅏ', 'ㅐ', 'ㅑ', 'ㅒ', 'ㅓ', 'ㅔ', 'ㅕ', 'ㅖ', 'ㅗ', 'ㅘ', 'ㅙ', 'ㅚ', 'ㅛ', 'ㅜ', 'ㅝ', 'ㅞ', 'ㅟ', 'ㅠ', 'ㅡ', 'ㅢ', 'ㅣ']
-final = [None, 'ㄱ', 'ㄲ', 'ㄳ', 'ㄴ', 'ㄵ', 'ㄶ', 'ㄷ', 'ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ', 'ㅁ', 'ㅂ', 'ㅄ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ']
-zi = ['ㄱ', 'ㄲ', 'ㄳ', 'ㄴ', 'ㄵ', 'ㄶ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅄ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ']
-mo = medial
+initial = ('ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ')
+medial = ('ㅏ', 'ㅐ', 'ㅑ', 'ㅒ', 'ㅓ', 'ㅔ', 'ㅕ', 'ㅖ', 'ㅗ', 'ㅘ', 'ㅙ', 'ㅚ', 'ㅛ', 'ㅜ', 'ㅝ', 'ㅞ', 'ㅟ', 'ㅠ', 'ㅡ', 'ㅢ', 'ㅣ')
+final = (None, 'ㄱ', 'ㄲ', 'ㄳ', 'ㄴ', 'ㄵ', 'ㄶ', 'ㄷ', 'ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ', 'ㅁ', 'ㅂ', 'ㅄ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ')
 
 kor2eng = {
     # zi 자음
@@ -45,7 +43,7 @@ kor2eng = {
     'ㅍ': 'v',
     'ㅎ': 'g',
 
-    # mo 모음
+    # mu 모음
     'ㅏ': 'k',
     'ㅐ': 'o',
     'ㅑ': 'i',
@@ -116,23 +114,27 @@ def split_gks(gks):
     return gks
 
 def make_combinations():
-    for _zi in zi:
-        print('gksdud[{}]="{}"'.format(_zi, "".join(gksdud([_zi]))))
+    for _initial in initial:
+        print(_initial, "".join(gksdud([_initial])))
     
-    for _mo in mo:
-        print('gksdud[{}]="{}"'.format(_mo, "".join(gksdud([_mo]))))
-        # print(_medial, "".join(gksdud([_medial])))
-
+    for _medial in medial:
+        print(_medial, "".join(gksdud([_medial])))
+    
+    for _final in final:
+        if _final is None:
+            continue
+        print(_final, "".join(gksdud([_final])))
+    
     for _initial in initial:
         for _medial in medial:
             res = combine([_initial, _medial])
-            print('gksdud[{}]="{}"'.format(res, "".join(gksdud(split_gks(res)))))
+            print(res, "".join(gksdud(split_gks(res))))
     
     for _initial in initial:
         for _medial in medial:
             for _final in final:
                 res = combine([_initial, _medial, _final])
-                print('gksdud[{}]="{}"'.format(res, "".join(gksdud(split_gks(res)))))
+                print(res, "".join(gksdud(split_gks(res))))
 
 
 make_combinations()
