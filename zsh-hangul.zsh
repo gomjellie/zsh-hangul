@@ -1,4 +1,4 @@
-echo "zeh-hangul loaded"
+echo "zsh-hangul loaded"
 
 autoload -Uz _convert_gksdud
 
