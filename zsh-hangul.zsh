@@ -34,7 +34,7 @@ gksdud[ㅡ]="m"
 
 _convert_gksdud() {
     # widget to convert korean -> english
-    BUFFER="${BUFFER}${gksdud[${KEYS}]}"
+    BUFFER="${LBUFFER}${gksdud[${KEYS}]}${RBUFFER}"
     CURSOR+=1
 }
 
