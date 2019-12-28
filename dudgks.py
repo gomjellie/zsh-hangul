@@ -23,12 +23,12 @@ def combine(chars):
     ["ㅎ", "ㅏ", "ㄴ"] => "한"
     ["ㄱ", "ㅡ", "ㄹ"] => "글"
     """
-    
+
     if chars[1] in COMPLEX:
         chars[1] = COMPLEX[chars[1]]
     if chars[2] in COMPLEX:
         chars[2] = COMPLEX[chars[2]]
-        
+
     return chr(INITIAL.index(chars[0]) * 588 + MEDIAL.index(chars[1]) * 28 + FINAL.index(chars[2]) + 44032)
 
 
@@ -40,7 +40,7 @@ def split_gks(gks):
     """
     if '가' > gks or gks > '힣':
         raise Exception("split_gks() got wrong parameter {}".format(gks))
-    ## 588개 마다 초성이 바뀜. 
+    ## 588개 마다 초성이 바뀜.
     ch1 = (ord(gks) - ord('가')) // 588
     ## 중성은 총 28가지 종류
     ch2 = ((ord(gks) - ord('가')) - (588 * ch1)) // 28
@@ -54,27 +54,31 @@ def dudgks(dud):
     cracked_korean = ""
     for _dud in dud:
         # dudgks -> ㅇㅕㅇㅎㅏㄴ
+        if _dud not in ALPHABETS:
+            continue
         cracked_korean += HANGEUL_JAMOS[ALPHABETS.index(_dud)]
-    
+
     divided_koreans = KOR_REGEX.findall(cracked_korean)
-    # divided_koreans = [('ㅇ', 'ㅕ', 'ㅇ'), ('ㅎ', 'ㅏ', 'ㄴ')]
-    
+
     ret = ""
     for divided_korean in divided_koreans:
         ret += combine([None if d == '' else d for d in divided_korean])
-    
+
     if ret == "":
         return cracked_korean
 
     return ret
 
-
-# if __name__ == "__main__":
-#     print(dudgks("rkqt"))
-#     print(dudgks("rml"))
-#     print(dudgks("anjdidlrp"))
-#     print(dudgks("zzzzzz"))
-
 if len(sys.argv) == 2:
-    print(dudgks(sys.argv[1]))
+    ret = ""
+    param = sys.argv[1].strip()
+    if param[0] == "\"":
+        param = param[1:]
 
+    non_alphabetic_regex = re.compile("[^a-zA-Z]")
+    non_alphabetics = non_alphabetic_regex.findall(param)
+    non_alphabetics.append("")
+    alphabetic_groups = non_alphabetic_regex.split(param)
+    for idx in range(len(alphabetic_groups)):
+        ret += dudgks(alphabetic_groups[idx]) + non_alphabetics[idx]
+    print(ret)
