@@ -53,19 +53,21 @@ def dudgks(dud):
         # dudgks -> ㅇㅕㅇㅎㅏㄴ
         cracked_korean += HANGEUL_JAMOS[ALPHABETS.index(_dud)]
     
-    print(cracked_korean)
-
     divided_koreans = KOR_REGEX.findall(cracked_korean)
     # divided_koreans = [('ㅇ', 'ㅕ', 'ㅇ'), ('ㅎ', 'ㅏ', 'ㄴ')]
-    print(divided_koreans)
     
     ret = ""
     for divided_korean in divided_koreans:
         ret += combine([None if d == '' else d for d in divided_korean])
+    
+    if ret == "":
+        return cracked_korean
+
     return ret
 
 
 if __name__ == "__main__":
-    dudgks("rkqt")
-    dudgks("rml")
-    dudgks("anjdidlrp")
+    print(dudgks("rkqt"))
+    print(dudgks("rml"))
+    print(dudgks("anjdidlrp"))
+    print(dudgks("zzzzzz"))
