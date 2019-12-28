@@ -1,5 +1,3 @@
-echo "zsh-hangul loaded"
-
 autoload -Uz _convert_gksdud
 
 _convert_gksdud() {
@@ -13,3 +11,4 @@ zle -N _convert_gksdud
 for key value in ${(kv)gksdud}; do
     bindkey "${key}" _convert_gksdud
 done
+
