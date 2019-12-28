@@ -12,3 +12,11 @@ for key value in ${(kv)gksdud}; do
     bindkey "${key}" _convert_gksdud
 done
 
+_complete_gksdud() {
+    # echo "$words[$CURRENT]"
+    compadd -Q "anwp" "wpahr" "$words[$CURRENT]" 
+}
+
+zle -C _complete_gksdud menu-complete _complete_gksdud
+
+bindkey "\`" _complete_gksdud
