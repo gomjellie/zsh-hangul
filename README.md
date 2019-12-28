@@ -31,6 +31,8 @@ plugins=(
 
 영어로 바뀌는거 무시하고 한글 단어를 끝까지 입력후 ^(ctrl key) 와 함께 n 를 눌러보세요.
 
+해당기능을 사용하기 위해서는 python3 가 설치되어 있어야 합니다.
+
 ```sh
 git commit -m "gpffh dnjfem  "
 #                           ^ 여기까지 입력한 상태에서 ctrl + n 을 누르면 
