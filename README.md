@@ -4,6 +4,8 @@ No need to get stress from 한/영 key
 
 ![zsh-hangul.gif](./.github/zsh-hangul.gif)
 
+zsh에서만 동작합니다 bash 사용자는 [bash 버전](https://github.com/gomjellie/bash-hangul)을 사용하세요.
+
 # Installation
 
 ## 1. custom/plugins/zsh-hangul 에 스크립트를 클론합니다.
