@@ -6,7 +6,7 @@ ZSH_HANGUL_DIR=$(dirname $0)
 _convert_gksdud() {
     # widget to convert korean -> english
     let n_double_quote=$(echo $LBUFFER |grep -o "\"" |wc -l |xargs)
-    let n_single_quote=$(echo $LBUFFER |grep -o "\'" |wc -l |xargs)
+    let n_single_quote=$(echo $LBUFFER |grep -o "'" |wc -l |xargs)
     let n_back_quote=$(echo $LBUFFER |grep -o "\`" |wc -l |xargs)
     
     [[ $(($n_double_quote % 2)) -eq 0 ]] &&
