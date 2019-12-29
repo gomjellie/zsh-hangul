@@ -17,13 +17,12 @@ _convert_gksdud() {
         return 0
     }
     BUFFER="${LBUFFER}${KEYS}${RBUFFER}"
-    CURSOR+=${#gksdud[${KEYS}]}
+    CURSOR+=${#KEYS}
 }
 
 _complete_dudgks() {
     res=$(python3 $ZSH_HANGUL_DIR/dudgks.py $words[$CURRENT])
     compadd -S "" -U -Q $res
-    compcall -D
 }
 
 zle -N _convert_gksdud
