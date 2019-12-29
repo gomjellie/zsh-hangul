@@ -1,8 +1,7 @@
 autoload -Uz _convert_gksdud
 autoload -Uz _complete_dudgks
 
-DIR=$(dirname $0)
-ZSH_HANGUL_DIR=$(cd $DIR >/dev/null 2>&1 && pwd)
+ZSH_HANGUL_DIR=$(dirname $0)
 
 _convert_gksdud() {
     # widget to convert korean -> english
