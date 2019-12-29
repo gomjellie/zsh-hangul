@@ -5,7 +5,18 @@ ZSH_HANGUL_DIR=$(dirname $0)
 
 _convert_gksdud() {
     # widget to convert korean -> english
-    BUFFER="${LBUFFER}${gksdud[${KEYS}]}${RBUFFER}"
+    let n_double_quote=$(echo $LBUFFER |grep -o "\"" |wc -l |xargs)
+    let n_single_quote=$(echo $LBUFFER |grep -o "\'" |wc -l |xargs)
+    let n_back_quote=$(echo $LBUFFER |grep -o "\`" |wc -l |xargs)
+    
+    [[ $(($n_double_quote % 2)) -eq 0 ]] &&
+    [[ $(($n_single_quote % 2)) -eq 0 ]] &&
+    [[ $(($n_back_quote   % 2)) -eq 0 ]] && {
+        BUFFER="${LBUFFER}${gksdud[${KEYS}]}${RBUFFER}"
+        CURSOR+=${#gksdud[${KEYS}]}
+        return 0
+    }
+    BUFFER="${LBUFFER}${KEYS}${RBUFFER}"
     CURSOR+=${#gksdud[${KEYS}]}
 }
 
