@@ -1,6 +1,9 @@
 autoload -Uz _convert_gksdud
 autoload -Uz _complete_dudgks
 
+DIR=$(dirname $0)
+ZSH_HANGUL_DIR=$(cd $DIR >/dev/null 2>&1 && pwd)
+
 _convert_gksdud() {
     # widget to convert korean -> english
     BUFFER="${LBUFFER}${gksdud[${KEYS}]}${RBUFFER}"
@@ -8,8 +11,7 @@ _convert_gksdud() {
 }
 
 _complete_dudgks() {
-    res=$(python3 ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-hangul/dudgks.py $words[$CURRENT])
-    # $compstate[insert]=0
+    res=$(python3 $ZSH_HANGUL_DIR/dudgks.py $words[$CURRENT])
     compadd -S "" -U -Q $res
     compcall -D
 }
