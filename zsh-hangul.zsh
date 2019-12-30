@@ -30,8 +30,7 @@ _on_tab_pressed() {
     res=$(python3 $ZSH_HANGUL_DIR/dudgks.py $words[$CURRENT])
     korean_candidate="$(echo $res| sed 's/\.\///')"
     korean_dirs=$(ls -A1|grep ^$korean_candidate)
-    compadd -S "/" -P "./" -U $(echo $korean_dirs) # echo makes it array
-    # unset POSTDISPLAY
+    compadd -s "/" -P "./" -U $(echo $korean_dirs) # echo makes it array
     [[ ${#$(echo $korean_dirs)} -eq 0 ]] || {
         return 0
     }
