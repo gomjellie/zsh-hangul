@@ -32,8 +32,10 @@ _on_tab_pressed() {
     korean_dirs=$(ls -A1|grep ^$korean_candidate)
     compadd -S "/" -P "./" -U $(echo $korean_dirs) # echo makes it array
     # unset POSTDISPLAY
-    return 0
-    # compcall -D
+    [[ ${#$(echo $korean_dirs)} -eq 0 ]] || {
+        return 0
+    }
+    compcall -D
 }
 
 zle -N _convert_gksdud
