@@ -2,6 +2,8 @@
 
 No need to get stress from 한/영 key
 
+쉘에 입력하는 한글을 영어로 바꿔줍니다. ex) !ㅎ-> !g, ㅣㄴ-> ls
+
 ![zsh-hangul.gif](./.github/zsh-hangul.gif)
 
 zsh에서만 동작합니다 bash 사용자는 [bash 버전](https://github.com/gomjellie/bash-hangul)을 사용하세요.
