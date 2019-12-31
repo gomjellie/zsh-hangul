@@ -1,4 +1,4 @@
-# zsh-hangul
+# `zsh-hangul`
 
 No need to get stress from 한/영 key
 
@@ -36,12 +36,23 @@ plugins=(
 해당기능을 사용하기 위해서는 python3 가 설치되어 있어야 합니다.
 
 ```sh
-git commit -m "gpffh dnjfem  "
-#                           ^ 여기까지 입력한 상태에서 ctrl + n 을 누르면 
+cd ./elfprxhfldlfma
+#                  ^ 여기까지 입력한 상태에서 ctrl + n 을 누르면 
 
-git commit -m "헬로 월드 "
+cd ./디렉토리이름
+
 #로 변경됩니다.
 ```
+
+문자열안에서는 한글 그대로 입력됩니다.
+
+문자열로 인식하는 경우는 다음 3가지 경우입니다.
+
+- "문자열"
+
+- '문자열'
+
+- `문자열`
 
 # Reference
 
