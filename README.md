@@ -12,25 +12,6 @@ zsh에서만 동작합니다 bash 사용자는 [bash 버전](https://github.com/
 
 자세한 설치 가이드는 [INSTALL.md](./INSTALL.md)를 참고해주세요.
 
-## 1. custom/plugins/zsh-hangul 에 스크립트를 클론합니다.
-
-```sh
-git clone https://github.com/gomjellie/zsh-hangul ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-hangul
-```
-
-## 2. ~/.zshrc에 plugin을 추가합니다.
-
-~/.zshrc 에
-
-```sh
-plugins=(
-    git
-    zsh-hangul
-)
-```
-
-과 같이 zsh-hangul을 추가해주세요.
-
 # Trouble Shooting
 
 ## 한글을 입력하고 싶은데 전부 영어로 바뀌어 버려요
