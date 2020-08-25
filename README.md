@@ -1,8 +1,8 @@
 # `zsh-hangul`
 
-No need to get stress from 한/영 key
+영어를 타이핑 해야되는데 한글로 타이핑된경우 자동으로 수정합니다. Auto correct hangul(한글, korean) to english when it was supposed to be typed english.
 
-쉘에 입력하는 한글을 영어로 바꿔줍니다. ex) !ㅎ-> !g, ㅣㄴ-> ls
+ex) ㅎㅇ-> gd, ㅣㄴ-> ls
 
 ![zsh-hangul.gif](./.github/zsh-hangul.gif)
 
