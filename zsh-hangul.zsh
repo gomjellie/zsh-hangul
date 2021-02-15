@@ -27,7 +27,7 @@ _complete_dudgks() {
 
 zle -N _convert_gksdud
 
-zle -C _complete_dudgks menu-complete _complete_dudgks
+# zle -C _complete_dudgks menu-complete _complete_dudgks
 
 for key value in ${(kv)gksdud}; do
     bindkey "${key}" _convert_gksdud
