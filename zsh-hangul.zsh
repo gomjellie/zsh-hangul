@@ -1,5 +1,5 @@
 autoload -Uz _convert_gksdud
-autoload -Uz _complete_dudgks
+# autoload -Uz _complete_dudgks
 
 ZSH_HANGUL_DIR=$(dirname $0)
 
@@ -33,4 +33,4 @@ for key value in ${(kv)gksdud}; do
     bindkey "${key}" _convert_gksdud
 done
 
-bindkey "^n" _complete_dudgks
+# bindkey "^n" _complete_dudgks
