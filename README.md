@@ -1,5 +1,7 @@
 # `zsh-hangul`
 
+생각해보면 터미널에서는 한글을 쓸 일이 잘 없습니다.
+
 영어를 타이핑 해야되는데 한글로 타이핑된경우 자동으로 수정합니다. Auto correct hangul(한글, korean) to english when it was supposed to be typed english.
 
 ex) ㅎㅇ-> gd, ㅣㄴ-> ls
