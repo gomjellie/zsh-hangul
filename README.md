@@ -8,7 +8,8 @@ Auto correct hangul(한글, korean) to english when it was supposed to be typed 
 
 ex) ㅎㅇ-> gd, ㅣㄴ-> ls
 
-![zsh-hangul.gif](./.github/zsh-hangul.gif)
+![zsh-hangul](https://user-images.githubusercontent.com/13645032/182091950-dc93cf86-6b25-466f-8c6c-0ab704d63c13.gif)
+
 
 zsh에서만 동작합니다 bash 사용자는 [bash 버전](https://github.com/gomjellie/bash-hangul)을 사용하세요. 참고로 macOS 는 카타리나 버전부터 zsh이 기본쉘로 변경되었습니다.
 
