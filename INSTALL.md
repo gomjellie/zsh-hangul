@@ -23,11 +23,13 @@ git clone https://github.com/gomjellie/zsh-hangul ${ZSH_CUSTOM:=~/.oh-my-zsh/cus
 
 ~/.zshrc 에
 
-```sh
+```diff
 plugins=(
     git
-    zsh-hangul
++   zsh-hangul
 )
+
++source $ZSH/custom/plugins/zsh-hangul/zsh-hangul.plugin.zsh
 ```
 
 과 같이 zsh-hangul을 추가해주세요.
