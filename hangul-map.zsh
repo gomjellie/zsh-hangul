@@ -1,4 +1,4 @@
-typeset -A gksdud
+typeset -gA gksdud
 gksdud[ㄱ]="r"
 gksdud[ㄲ]="R"
 gksdud[ㄳ]="rt"
