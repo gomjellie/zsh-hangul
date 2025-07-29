@@ -9,8 +9,16 @@ _zsh_hangul_is_pasting=0
 _convert_gksdud() {
     # widget to convert korean -> english
     
-    # 붙여넣기 중일 때는 한영변환을 하지 않음
-    if [[ $_zsh_hangul_is_pasting -eq 1 ]]; then
+    # AI 도구 감지: 환경변수 기반 감지
+    local is_ai_tool=0
+    
+    # 다양한 AI 도구들의 환경변수 확인
+    if [[ -n "$CURSOR_AGENT" ]]; then
+        is_ai_tool=1
+    fi
+
+    # 붙여넣기 중이거나 AI도구가 입력중일 때는 한영변환을 하지 않음
+    if (( _zsh_hangul_is_pasting == 1 )) || (( is_ai_tool == 1 )); then
         BUFFER="${LBUFFER}${KEYS}${RBUFFER}"
         CURSOR+=${#KEYS}
         return 0
