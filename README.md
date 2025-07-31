@@ -34,6 +34,12 @@ zsh에서만 동작합니다 bash 사용자는 [bash 버전](https://github.com/
 - ✅ 직접 타이핑: `ㅎㅇ` → `gd`로 자동 변환
 - ✅ 복사 붙여넣기: 한글 텍스트가 그대로 유지됨
 
+## 3. AI 툴의 입력
+
+AI가 한영을 실수로 입력할 일은 없다고 가정하고 한영자동 변환을 해주지 않습니다. 
+
+cursor만 적용해두었습니다. 다른 툴에서 필요한경우 이슈나 PR을 올려주세요! 😄
+
 # Reference
 
 http://zsh.sourceforge.net/Doc/zsh_us.pdf
